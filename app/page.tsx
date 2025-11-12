@@ -82,12 +82,14 @@ export default function Home() {
         <div className="relative min-h-[50vh] md:min-h-full">
           <video
             className="absolute inset-0 w-full h-full object-cover"
-            src="/Video/domaine.mp4"
             autoPlay
             loop
             muted
             playsInline
-          />
+            preload="metadata"
+          >
+            <source src="/video/domaine.mp4" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent" />
           <div className="absolute inset-0 flex items-end md:items-center">
             <div className="p-6 md:p-12 lg:p-16 max-w-2xl">
@@ -96,7 +98,7 @@ export default function Home() {
               </h2>
               <p className="text-white/90 text-2xl md:text-3xl mb-6">Wines of Excellence</p>
               <Button size="lg" className="bg-white text-foreground hover:bg-white/90" asChild>
-                <a href="https://domainedesseigneurs.fr/" target="_blank" rel="noopener noreferrer">Découvrir</a>
+                <a href="/domaine-des-seigneurs" target="_blank" rel="noopener noreferrer">Découvrir</a>
               </Button>
             </div>
           </div>
@@ -293,9 +295,9 @@ export default function Home() {
                 <div>
                   <h3 className="font-serif text-3xl mb-3 text-card-foreground">Paris Friand</h3>
                   <p className="text-lg text-muted-foreground">
-                  7, Avenue Pierre Semard Valence 26000<br /> 5, rue des Alpes Valence 26000
+                    7, Avenue Pierre Semard Valence 26000<br /> 5, rue des Alpes Valence 26000
                     <br />
-                   
+
                   </p>
                 </div>
               </div>
