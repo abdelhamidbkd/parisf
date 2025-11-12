@@ -81,18 +81,15 @@ export default function Home() {
         {/* Panneau gauche */}
         <div className="relative min-h-[50vh] md:min-h-full">
           <video
-            className="absolute inset-0 w-full h-full object-cover"
+            controls
             muted
             playsInline
             autoPlay
             loop
             preload="metadata"
-            poster="/video/domaine-poster.jpg" // optionnel: une image 1280x720 dans /public/video/
-          // controls // <-- décommente le temps de tester si besoin
+            className="absolute inset-0 w-full h-full object-cover"
           >
-            <source src="/video/domaine.webm" type="video/webm" />
             <source src="/video/domaine.mp4" type="video/mp4" />
-            Votre navigateur ne supporte pas la vidéo HTML5.
           </video>
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent" />
           <div className="absolute inset-0 flex items-end md:items-center">
