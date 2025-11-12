@@ -81,7 +81,6 @@ export default function Home() {
         {/* Panneau gauche */}
         <div className="relative min-h-[50vh] md:min-h-full">
           <video
-            controls
             muted
             playsInline
             autoPlay
