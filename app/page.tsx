@@ -7,6 +7,9 @@ import { useLanguage } from "@/components/language-provider"
 import { ChefHat, MapPin, Phone, Clock, ShoppingBag, Award, Heart, Train, Car } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { useEffect, useRef } from "react";
+import VideoBG from "@/components/videoBG";
+
 
 export default function Home() {
   const { t } = useLanguage()
@@ -79,30 +82,24 @@ export default function Home() {
       {/* Split Screen Hero - style maquette */}
       <section className="min-h-[90vh] grid md:grid-cols-2">
         {/* Panneau gauche */}
-        <div className="relative min-h-[50vh] md:min-h-full">
-          <video
-            muted
-            playsInline
-            autoPlay
-            loop
-            preload="metadata"
-            className="absolute inset-0 w-full h-full object-cover"
-          >
-            <source src="/video/domaine.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent" />
-          <div className="absolute inset-0 flex items-end md:items-center">
+        <div className="relative min-h-[50vh] md:min-h-full overflow-hidden">
+          <VideoBG />
+          <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/60 via-black/30 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 z-20 flex items-end md:items-center">
             <div className="p-6 md:p-12 lg:p-16 max-w-2xl">
               <h2 className="font-serif text-white text-5xl md:text-7xl leading-tight mb-4">
                 Domaine des<br />Seigneurs
               </h2>
               <p className="text-white/90 text-2xl md:text-3xl mb-6">Wines of Excellence</p>
               <Button size="lg" className="bg-white text-foreground hover:bg-white/90" asChild>
-                <a href="/domaine-des-seigneurs" target="_blank" rel="noopener noreferrer">Découvrir</a>
+                <a href="/domaine-des-seigneurs" target="_blank" rel="noopener noreferrer">
+                  Découvrir
+                </a>
               </Button>
             </div>
           </div>
         </div>
+
         {/* Panneau droit */}
         <div className="relative min-h-[50vh] md:min-h-full">
           <Image
@@ -113,7 +110,7 @@ export default function Home() {
             priority
           />
           <div className="absolute inset-0 bg-red-600/35 mix-blend-multiply" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent pointer-events-none" />
           <div className="absolute inset-0 flex items-end md:items-center">
             <div className="p-6 md:p-12 lg:p-16 max-w-2xl ml-auto text-right">
               <h2 className="font-serif text-white text-5xl md:text-7xl leading-tight mb-4">
